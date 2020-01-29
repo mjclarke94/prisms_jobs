@@ -1,4 +1,4 @@
-""" Misc functions for interfacing between torque and the prisms_jobs module """
+""" Misc functions for interfacing between SGE and the prisms_jobs module """
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 from builtins import *
 
@@ -89,7 +89,7 @@ def _qstat(jobid=None, username=getlogin(), full=False):
 NAME = 'torque'
 
 def sub_string(job):
-    """Write Job as a string suitable for torque
+    """Write Job as a string suitable for SGE
 
     Args:
         job (prisms_jobs.Job instance): Job to be submitted
