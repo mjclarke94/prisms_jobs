@@ -66,6 +66,8 @@ def set_software(software_name=None):
         import prisms_jobs.interface.default as software
     elif software_name.lower() == 'torque':
         import prisms_jobs.interface.torque as software
+    elif software_name.lower() == 'porque':
+        import prisms_jobs.interface.porque as software
     elif software_name.lower() == 'slurm':
         import prisms_jobs.interface.slurm as software
     else:
