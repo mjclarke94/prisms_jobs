@@ -107,6 +107,8 @@ def sub_string(job):
         jobstr += "#PBS -l pmem={0}\n".format(job.pmem)
     if job.qos is not None:
         jobstr += "#PBS -l qos={0}\n".format(job.qos)
+#    if job.qos is not None:
+#        jobstr += "#PBS -l qos={0}\n".format(job.qos)
     if job.queue is not None:
         jobstr += "#PBS -q {0}\n".format(job.queue)
     if job.email != None and job.message != None:
