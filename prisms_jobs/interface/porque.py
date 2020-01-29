@@ -98,7 +98,7 @@ def sub_string(job):
     jobstr += "#$ -S /bin/bash\n"
     jobstr += "#$ -N {0}\n".format(job.name)
     if job.exetime is not None:
-        jobstr += "#PBS -a {0}\n".format(job.exetime)
+        jobstr += "#$ -a {0}\n".format(job.exetime)
     if job.account is not None:
         jobstr += "#PBS -A {0}\n".format(job.account)
     jobstr += "#PBS -l walltime={0}\n".format(job.walltime)
