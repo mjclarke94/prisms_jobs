@@ -94,9 +94,9 @@ def sub_string(job):
     Args:
         job (prisms_jobs.Job instance): Job to be submitted
     """
-    jobstr = "#!/bin/sh\n"
-    jobstr += "#PBS -S /bin/sh\n"
-    jobstr += "#PBS -N {0}\n".format(job.name)
+    jobstr = "#!/bin/bash -l\n"
+    jobstr += "#$ -S /bin/bash\n"
+    jobstr += "#$ -N {0}\n".format(job.name)
     if job.exetime is not None:
         jobstr += "#PBS -a {0}\n".format(job.exetime)
     if job.account is not None:
