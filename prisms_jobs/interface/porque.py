@@ -104,8 +104,7 @@ def sub_string(job):
     jobstr += "#$ -l h_rt={0}\n".format(job.walltime)
     jobstr += "#$ -pe mpi {0}\n".format(job.ppn * job.nodes)
     if job.pmem is not None:
-        jobstr += "#PBS -l pmem={0}\n".format(job.pmem)
-    if job.qos is not None:
+        jobstr += "#PBS -l mem={0}\n".format(job.pmem)
 #    if job.qos is not None:
 #        jobstr += "#PBS -l qos={0}\n".format(job.qos)
     if job.queue is not None:
