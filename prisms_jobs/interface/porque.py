@@ -21,16 +21,8 @@ from prisms_jobs.misc import getlogin, run, seconds
 
 
 def _getversion():
-    """Returns the torque version as string or None if no ``qstat`` """
-    if find_executable("qstat") is None:
-        return None
-    opt = ["qstat", "--version"]
-
-    # call 'qstat' using subprocess
-    stdout = run(opt)[0]
-
-    # return the version number
-    return stdout.rstrip("\n").lower().lstrip("version: ")
+    """This particular version of qstat is haunted, just return None """
+    return None
 
 torque_version = _getversion()
 
