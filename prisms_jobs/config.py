@@ -33,7 +33,10 @@ def detect_software():
             * 'slurm' - detected via 'sbatch'
     """
     if find_executable('qsub') is not None:
-        return 'torque'
+        if find_executable('qconf') is not None:
+            return 'porque'
+        else:
+            return 'torque'
     elif find_executable('sbatch') is not None:
         return 'slurm'
     else:
