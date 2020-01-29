@@ -102,7 +102,7 @@ def sub_string(job):
     if job.account is not None:
         jobstr += "#PBS -A {0}\n".format(job.account)
     jobstr += "#PBS -l walltime={0}\n".format(job.walltime)
-    jobstr += "#PBS -l nodes={0}:ppn={1}\n".format(job.nodes, job.ppn)
+    jobstr += "#$ -pe mpi {0}\n".format(job.ppn * job.nodes)
     if job.pmem is not None:
         jobstr += "#PBS -l pmem={0}\n".format(job.pmem)
     if job.qos is not None:
