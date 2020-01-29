@@ -114,7 +114,7 @@ def sub_string(job):
         jobstr += "#$ -m {0}\n".format(job.message)
     jobstr += "#PBS -V\n"
     jobstr += "#PBS -p {0}\n\n".format(job.priority)
-    jobstr += "#auto={0}\n\n".format(job.auto)
+#    jobstr += "#auto={0}\n\n".format(job.auto)
     jobstr += "echo \"I ran on:\"\n"
     jobstr += "cat $PBS_NODEFILE\n\n"
     jobstr += "cd $PBS_O_WORKDIR\n"
