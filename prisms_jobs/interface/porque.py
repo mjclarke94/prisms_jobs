@@ -110,8 +110,8 @@ def sub_string(job):
     if job.queue is not None:
         jobstr += "#$ -P {0}\n".format(job.queue)
     if job.email != None and job.message != None:
-        jobstr += "#PBS -M {0}\n".format(job.email)
-        jobstr += "#PBS -m {0}\n".format(job.message)
+        jobstr += "#$ -M {0}\n".format(job.email)
+        jobstr += "#$ -m {0}\n".format(job.message)
     jobstr += "#PBS -V\n"
     jobstr += "#PBS -p {0}\n\n".format(job.priority)
     jobstr += "#auto={0}\n\n".format(job.auto)
