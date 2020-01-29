@@ -86,7 +86,7 @@ def _qstat(jobid=None, username=getlogin(), full=False):
 
 ### Required ###
 
-NAME = 'torque'
+NAME = 'michael'
 
 def sub_string(job):
     """Write Job as a string suitable for SGE
