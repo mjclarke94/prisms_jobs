@@ -17,6 +17,7 @@ import prisms_jobs
 from prisms_jobs import JobsError
 from prisms_jobs.misc import getlogin, run, seconds
 
+from xmltodict import parse
 ### Internal ###
 
 
