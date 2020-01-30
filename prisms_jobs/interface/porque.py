@@ -40,18 +40,18 @@ def _qstat(jobid=None, username=getlogin(), full=False):
     """
 
     # -u and -f contradict in earlier versions of Torque
-    if full and username is not None and int(torque_version.split(".")[0]) < 5 and jobid is None:
+    # if full and username is not None and int(torque_version.split(".")[0]) < 5 and jobid is None:
         # First get all jobs by the user
-        qopt = ["qselect"]
-        qopt += ["-u", username]
+        # qopt = ["qselect"]
+        # qopt += ["-u", username]
 
         # Call 'qselect' using subprocess
-        stdout = run(qopt)[0]
+        # stdout = run(qopt)[0]
 
         # Get the jobids
-        jobid = []
-        for line in StringIO(stdout):
-            jobid += [line.rstrip("\n")]
+        # jobid = []
+        # for line in StringIO(stdout):
+            # jobid += [line.rstrip("\n")]
 
     opt = ["qstat"]
     # If there are jobid(s), you don't need a username
